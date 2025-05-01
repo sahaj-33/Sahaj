@@ -1,0 +1,12 @@
+<div class="dashboard">
+  <app-header></app-header>
+  <div class="info">
+    <p>Active Patients: {{ activePatients$ | async }}</p>
+    <p>Date Range: {{ (dateRange$ | async)?.start | date }} - {{ (dateRange$ | async)?.end | date }}</p>
+    <p>Last Updated: {{ lastUpdated$ | async | date:'medium' }}</p>
+  </div>
+  <div class="charts">
+    <app-time-in-range-chart></app-time-in-range-chart>
+    <app-gmi-chart></app-gmi-chart>
+  </div>
+</div>

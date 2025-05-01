@@ -1,0 +1,25 @@
+
+  .title {
+    color: var(--primary-color);
+  }
+  .print-button {
+    background-color: var(--button-color);
+    color: white;
+    padding: 5px 10px;
+  }
+  .tabs button {
+    margin-right: 10px;
+  }
+  .tabs .active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .period-selector button {
+    margin-right: 10px;
+    padding: 5px 10px;
+  }

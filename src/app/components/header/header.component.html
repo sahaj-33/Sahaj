@@ -1,0 +1,10 @@
+
+<h1 class="title">Clinic Outcomes</h1>
+<div class="period-selector">
+    <button *ngFor="let period of periods" (click)="onPeriodSelect(period)">{{ period }}</button>
+    </div>
+<!-- <p class="info">
+Showing {{ activePatients }} patients from last {{ reportingPeriod }} of available data from {{ dateRange.start | date }} - {{ dateRange.end | date }}.
+Only patients with a minimum of 10 days of SG data are included.
+Last updated on {{ lastUpdated | date: 'MM/dd/yyyy, h:mm a' }}.
+</p> -->

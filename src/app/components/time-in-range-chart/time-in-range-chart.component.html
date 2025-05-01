@@ -1,0 +1,4 @@
+<div class="chart-container">
+    <h2 class="chart-title">Time in Range <span class="info-icon" matTooltip="Based on standard of care ranges for Time in range."></span></h2>
+    <canvas baseChart [data]="timeInRangeData$ | async" [options]="barChartOptions" [type]="'bar'"></canvas>
+</div>
