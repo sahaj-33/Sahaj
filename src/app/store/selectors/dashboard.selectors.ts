@@ -12,3 +12,4 @@ export const selectGmiData = createSelector(selectDashboardState, (state) => sta
 export const selectActivePatients = createSelector(selectDashboardState, (state) => state.activePatients);
 export const selectDateRange = createSelector(selectDashboardState, (state) => state.dateRange);
 export const selectLastUpdated = createSelector(selectDashboardState, (state) => state.lastUpdated);
+export const selectSelectedPeriod = createSelector(selectDashboardState, (state) => state.selectedPeriod);

@@ -1,10 +1,12 @@
-
-<h1 class="title">Clinic Outcomes</h1>
-<div class="period-selector">
-    <button *ngFor="let period of periods" (click)="onPeriodSelect(period)">{{ period }}</button>
+<div class="header-container">
+    <h1>Clinic Outcomes</h1>
+    <div class="controls">
+      <mat-button-toggle-group [value]="selectedPeriod$ | async" (change)="onPeriodSelect($event.value)" class="period-toggles">
+        <mat-button-toggle *ngFor="let period of periods" [value]="period">{{ period }}</mat-button-toggle>
+      </mat-button-toggle-group>
+      <button mat-stroked-button (click)="print()" class="print-button" matTooltip="Print">
+        <mat-icon>print</mat-icon>
+        Print
+      </button>
     </div>
-<!-- <p class="info">
-Showing {{ activePatients }} patients from last {{ reportingPeriod }} of available data from {{ dateRange.start | date }} - {{ dateRange.end | date }}.
-Only patients with a minimum of 10 days of SG data are included.
-Last updated on {{ lastUpdated | date: 'MM/dd/yyyy, h:mm a' }}.
-</p> -->
+  </div>

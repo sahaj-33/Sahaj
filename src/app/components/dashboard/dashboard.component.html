@@ -1,12 +1,30 @@
 <div class="dashboard">
   <app-header></app-header>
   <div class="info">
-    <p>Active Patients: {{ activePatients$ | async }}</p>
-    <p>Date Range: {{ (dateRange$ | async)?.start | date }} - {{ (dateRange$ | async)?.end | date }}</p>
-    <p>Last Updated: {{ lastUpdated$ | async | date:'medium' }}</p>
+    Showing {{ activePatients$ | async }} patients from last {{ (selectedPeriod$ | async) || '30 days' }} of available data from {{ (dateRange$ | async)?.start | date }} - {{ (dateRange$ | async)?.end | date }}.
+    <div class="instructional-text">
+      Only patients with a minimum of 10 days of SG data are included. Last updated on {{ lastUpdated$ | async | date:'MM/dd/yyyy, h:mm a' }}.
+    </div>
   </div>
   <div class="charts">
-    <app-time-in-range-chart></app-time-in-range-chart>
-    <app-gmi-chart></app-gmi-chart>
+    <mat-card class="chart-card">
+      <mat-card-header>
+        <mat-card-title>
+          Time in Range
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-time-in-range-chart></app-time-in-range-chart>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="chart-card">
+      <mat-card-header>
+        <mat-card-title>Glucose Management Indicator (GMI)</mat-card-title>
+        <mat-card-subtitle>Average GMI: {{ (dashboardData$ | async)?.averageGMI || '6.7' }}%</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <app-gmi-chart></app-gmi-chart>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
